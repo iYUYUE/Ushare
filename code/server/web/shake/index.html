@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.0"/>
+        <title>
+            Ushare
+        </title>
+
+        <link rel="stylesheet" href="./css/modal.css">
+        <style type="text/css">
+        * {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+        }
+
+        .hover {
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;        
+        }
+        .semantic-content .modal-content {
+            max-height: 50vh;
+        }
+        .commentsubmit{    
+            background-color:#3c3c3c;
+        }
+        #commentform{
+            width:100%;
+            float:left;
+            padding-top:0px;
+        }
+
+        .feedback-input {
+            color:#3c3c3c;
+            font-family: Helvetica, Arial, sans-serif;
+          font-weight:500;
+            font-size: 18px;
+            border-radius: 0;
+            line-height: 22px;
+            background-color: #fbfbfb;
+            padding: 13px 13px 13px 54px;
+            margin-bottom: 10px;
+            width:100%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            box-sizing: border-box;
+          border: 3px solid rgba(0,0,0,0);
+        }
+
+        .feedback-input:focus{
+            background: #fff;
+            box-shadow: 0;
+            border: 3px solid #3498db;
+            color: #3498db;
+            outline: none;
+          padding: 13px 13px 13px 54px;
+        }
+
+        .focused{
+            color:#30aed6;
+            border:#30aed6 solid 3px;
+        }
+
+        /* Icons ---------------------------------- */
+
+        #comment{
+            background-image: url(./img/comment.svg);
+            background-size: 30px 30px;
+            background-position: 11px 8px;
+            background-repeat: no-repeat;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            line-height: 150%;
+            resize:vertical;
+        }
+
+        input:hover, textarea:hover,
+        input:focus, textarea:focus {
+            background-color:white;
+        }
+
+        #button-blue{
+            font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+            float:left;
+            width: 100%;
+            border: #fbfbfb solid 4px;
+            cursor:pointer;
+            background-color: #3498db;
+            color:white;
+            font-size:24px;
+            padding-top:22px;
+            padding-bottom:22px;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+          margin-top:-4px;
+          font-weight:700;
+        }
+
+        #button-blue:hover, #button-blue.hover_effect{
+            background-color: rgba(0,0,0,0);
+            color: #0493bd;
+        }
+            
+        .commentsubmit:hover, .commentsubmit.hover_effect {
+            color: #3498db;
+        }
+            
+        .ease {
+            width: 0px;
+            height: 74px;
+            background-color: #fbfbfb;
+            -webkit-transition: .3s ease;
+            -moz-transition: .3s ease;
+            -o-transition: .3s ease;
+            -ms-transition: .3s ease;
+            transition: .3s ease;
+        }
+
+        .commentsubmit:hover .ease, .commentsubmit.hover_effect .ease{
+          width:100%;
+          background-color:white;
+        }
+        </style>
+        <link rel="stylesheet" type="text/css" media="screen" href="./css/shared.css?v=1.0.4"> 
+    
+        <script type="text/javascript">
+        </script>
+        
+        
+        <meta name="description" content="">
+        
+    </head>
+    
+    <body>
+        <div id="Wrapper">
+            <div class="content">
+                 <div id="circle">
+                    <div class="circle one">
+                        <div class="circle two">
+                            <div class="circle three">
+                                <div class="circle four">
+                                    <div class="circle five">
+                                        <div class="circle six">
+                                            <div class="circle seven">
+                                                <div class="circle eight">
+                                                    <div class="circle nine">
+                                                        <div class="circle ten">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span class="item_title">
+                                                processing
+                                                <span class="Dotone">.</span>
+                                                <span class="Dottwo">.</span>
+                                                <span class="Dotthree">.</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+            
+            <div class="c">
+            </div>
+            <div class="sep20">
+            </div>
+            
+        </div>
+
+        <!-- A modal with its content -->
+        <section class="semantic-content" id="modal-text"
+                tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+
+            <div class="modal-inner">
+                <header>
+                    <h2 id="modal-label">Leave a message</h2>
+                </header>
+
+                <div class="modal-content">
+                    <div id="commentform">
+                          <p class="text">
+                            <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment">Would you like</textarea>
+                          </p>
+                          
+                          <div class="commentsubmit">
+                            <input type="submit" value="SEND" id="button-blue"/>
+                            <div class="ease"></div>
+                          </div>
+                      </div>
+                </div>
+
+                <footer>
+                    <p>Tips:</p>
+                </footer>
+            </div>
+
+            <!-- Use Hash-Bang to maintain scroll position when closing modal -->
+
+            <a href="#!" class="modal-close" title="Close this modal" data-dismiss="modal" data-close="Close">×</a>
+
+        </section>
+    </body>
+    
+    <script src="./js/jquery-2.1.0.js" type="text/javascript"></script>
+    <script src="./js/spin.min.js" type="text/javascript"></script>
+    <script src="./js/main.js" type="text/javascript"></script>
+    <script src="./js/modal.js"></script><!-- JS for Modal -->
+    
+</html>

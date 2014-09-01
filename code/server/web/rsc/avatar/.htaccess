@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteBase /web/rsc/avatar
+RewriteRule ^(.*).png$  avatar.php?action=$1

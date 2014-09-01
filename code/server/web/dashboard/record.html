@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ushare Data</title>
+    <style type="text/css">
+      #RDFtitle {
+        margin-top:0px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="RDFtitle">Realtime Data Flow
+    &nbsp;
+    <a href="#" id="startButton" style="font-weight:normal; font-size: 16px;">start</a>
+    <a href="#" id="stopButton" style="font-weight:normal; font-size: 16px;">stop</a>
+    &nbsp;
+    <a href="#" id="cancelButton" style="font-weight:normal; font-size: 16px;">clear</a>
+    </h1>
+     <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Share Request</div>
+
+      <!-- Table -->
+      <table class="table">
+        <thead>
+          <tr>
+            <!-- <th>#</th> -->
+            <th>User ID</th>
+            <th>BSSID</th>
+            <th>SSID</th>
+            <th>TIMESTAMP</th>
+          </tr>
+        </thead>
+        <tbody id="dataContainer">
+        </tbody>
+      </table>
+    </div>
+    
+    <script language="JavaScript">
+    // function myrefresh(){
+    //    window.location.reload();
+    // }
+    // setTimeout('myrefresh()',1000);
+    $(document).ready(function() {
+
+      $("#stopButton").hide();
+      $('#dataContainer').load('/../../api/data/web/?type=flow');
+      
+      function dataRefreshstart(){
+          refreshcon = setInterval(function(){
+              $('#dataContainer').load('/../../api/data/web/?type=flow', function(){
+               $("#startButton").hide();
+               $("#stopButton").show();
+              });
+            }, 1000);
+      }
+
+      function dataRefreshstop(){
+          try{
+              clearInterval(refreshcon);
+              $("#startButton").show();
+              $("#stopButton").hide();
+          }catch(err){}
+      }
+
+      $("#startButton").click(function(){
+        dataRefreshstart();
+      });
+
+      $("#stopButton").click(function(){
+        dataRefreshstop();
+      });
+
+      $("#cancelButton").click(function(){
+        $.get("/../../api/shareclean",function(data,status){
+          $('#dataContainer').load('/../../api/data/web/?type=flow');
+        });
+      });
+
+    });
+    </script>  
+  </body>
+</html>

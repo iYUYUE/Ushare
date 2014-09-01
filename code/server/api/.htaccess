@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /api
+RewriteCond $1 !(index\.php|message\.php|data)
+RewriteRule ^(.*)$  index.php?action=$1 [L]

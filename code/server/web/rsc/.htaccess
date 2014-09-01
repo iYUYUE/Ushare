@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /web/rsc
+RewriteCond $1 !(index\.php|css|images|js|avatar)
+RewriteRule ^(.*)$  index.php?action=$1 [L]

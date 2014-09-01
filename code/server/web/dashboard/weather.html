@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ushare Data</title>
+
+    <!-- Bootstrap -->
+<!--     <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <style type="text/css">
+      .progress-bar.animate {
+         width: 100%;
+      }
+
+      .modal-backdrop {
+         opacity: 0.5;
+      }
+
+      .modal-dialog {
+         -webkit-transform: translate(0px, 50%);
+         transform: translate(0px, 50%);
+      }
+
+      .progress-popup {
+         margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+  </br>
+
+  <div class="row">
+    
+    <div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">Manual Push</div>
+        <div class="panel-body">
+          <form role="form" id="weatherPushForm">
+            <div class="form-group">
+              <label>Target City</label>
+              <input class="form-control" id="citySelector" name="citySelector" data-provide="typeahead" placeholder="Enter City Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Type of Weather</label>
+              <select id="weatherType" name="weatherType" class="form-control">
+                <option value="1">Rainy</option>
+                <option value="2">Snowy</option>
+                <option value="3">Snowstorm</option>
+              </select>
+            </div>
+            <div id="resultBox">
+            </div>
+            <button id="weatherPushButton" type="submit" class="btn btn-primary">&nbsp;Submit&nbsp;&nbsp;</button>
+          </form>
+        </div>
+      </div>
+      
+   </div>
+
+    <div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">Weather API</div>
+        <div class="panel-body">
+          <form role="form" id="weatherAPIForm">
+            <div class="form-group">
+              <label>URL</label>
+              <input class="form-control" value="http://api.wunderground.com/api/">
+            </div>
+            <div class="form-group">
+              <label>Key ID</label>
+              <input class="form-control" value="27b427bfeb5fefe0">
+            </div>
+            <div id="resultAPIBox">
+            </div>
+            <button id="weatherAPIButton" type="submit" class="btn btn-primary">&nbsp;Save&nbsp;&nbsp;</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <h2></h2>
+      <p class="text-danger"></p>
+    </div>
+  </div>
+
+  <div class="modal js-loading-bar">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-body">
+         <div class="progress progress-popup">
+          <div class="progress-bar"></div>
+         </div>
+       </div>
+     </div>
+   </div>
+  </div>
+
+  
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/typeahead.bundle.js"></script>
+    <script src="js/bootstrap3-typeahead.min.js"></script>
+
+    <script language="JavaScript">
+    function getid(id) {
+      return(typeof id == 'string') ? document.getElementById(id) : id
+    };
+
+    function submitItems() {
+
+      // clean up result
+      $("#resultBox").html("");
+
+      // get input
+      var input_city = getid("citySelector").value;
+
+      var e = getid("weatherType").options[getid("weatherType").selectedIndex];
+      var input_weather = (e==null)?"0":e.value;
+
+      if(input_weather>0&&input_city.length>0)
+      {
+        // show progress bar
+        var $modal = $('.js-loading-bar'),
+            $bar = $modal.find('.progress-bar');
+        
+        $modal.modal('show');
+
+        setTimeout(function() {
+          //$modal.modal('hide');
+
+          // post data
+          $.post( "../rsc/weatherBroadcast", { 'cityName': input_city, 'weatherType': input_weather } )
+            .done(function(result) {
+              $modal.modal('hide'); 
+              $bar.removeClass('animate');
+              $("#resultBox").html("<div class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a><strong>Success!</strong> The Notifications have been pushed to "+result+" matching user"+((parseInt(result)>1)?"s":"")+".</div>");
+            })
+            .fail(function() {
+              $modal.modal('hide'); 
+              $bar.removeClass('animate');
+              $("#resultBox").html("<div class=\"alert alert-danger\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a><strong>Error!</strong> A problem has been occurred while submitting your data.</div>");
+            });
+
+        }, 0);
+
+        
+        } else {
+          $("#resultBox").html("<div class=\"alert alert-warning\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a><strong>Warning!</strong> Please check your input.</div>");
+        }
+ 
+    }
+
+    $(document).ready(function () {
+
+      var cityList = new Bloodhound({
+        // datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+        datumTokenizer: Bloodhound.tokenizers.whitespace,
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: 'city_collection.json'
+      });
+       
+      cityList.initialize();    
+
+      $("#citySelector").typeahead(
+      {
+        source:cityList.ttAdapter()   
+      });
+      
+      $("#weatherType").prop("selectedIndex", -1);
+
+      $("#weatherPushForm").submit(function() {
+        submitItems();
+        return false;
+      });
+
+      $("#weatherAPIForm").submit(function() {
+        $("#resultAPIBox").html("<div class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a><strong>Saved!</strong>.</div>");
+        return false;
+      });
+
+       // Based on http://codepen.io/bseth99/pen/CDjfp
+       $('.js-loading-bar').modal({
+          backdrop: 'static',
+          show: false
+        }).on('shown.bs.modal', function( event ) {
+
+           var $bar = $(event.target).find('.progress-bar'),
+               _wait = function() {       
+                    setTimeout(function() {
+                      if ( $bar.is(':visible')) { 
+                           $bar.addClass('animate');
+                       } else {
+                          console.log('not ready'); 
+                          _wait();
+                       }
+                    }, 0);       
+               };
+           
+           _wait();
+           
+        });
+
+        // $('#weatherPushButton').click(function() {
+        //   var $modal = $('.js-loading-bar'),
+        //       $bar = $modal.find('.progress-bar');
+          
+        //   $modal.modal('show');
+
+        //   setTimeout(function() {
+        //     $modal.modal('hide'); 
+        //     $bar.removeClass('animate');
+        //     //$modal.modal('hide');        
+        //   }, 1500);
+          
+        // });
+
+        // End of ...
+
+    });
+    
+
+
+    </script>
+  
+    
+  </body>
+</html>

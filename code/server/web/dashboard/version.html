@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ushare Data</title>
+
+    <!-- Bootstrap -->
+<!--     <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  </head>
+  <body>
+  </br>
+
+  <div class="row">
+    
+    <div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">Configuration</div>
+        <div class="panel-body">
+          <form role="form" id="versionPushForm">
+            <div class="form-group">
+              <label>Version name</label>
+              <input class="form-control" id="versionName" name="versionName" placeholder="Enter Version Name (e.g. 1.4.1)">
+            </div>
+            <div class="form-group">
+              <label>Version code</label>
+              <input class="form-control" id="versionCode" name="versionCode" placeholder="Enter Version Code (e.g. 141)">
+            </div>
+            <div class="form-group">
+              <label>Updates content</label>
+              <textarea class="form-control" rows="7" id="updatesContent" name="updatesContent"></textarea>
+            </div>
+            <div id="resultBoxforversion">
+            </div>
+            <button type="submit" class="btn btn-primary">&nbsp;Submit&nbsp;&nbsp;</button>
+          </form>
+        </div>
+      </div>
+      
+   </div>
+
+   <div class="col-lg-4">
+      <h2></h2>
+      <p class="text-danger"></p>
+    </div>
+
+    <div class="col-lg-4">
+      <h2></h2>
+      <p class="text-danger"></p>
+    </div>
+  </div>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script language="JavaScript">
+    function getid(id) {
+      return(typeof id == 'string') ? document.getElementById(id) : id
+    };
+
+    function submitVersionInfo() {
+
+      // clean up result
+      $("#resultBoxforversion").html("");
+
+      // get input
+      var version_name = getid("versionName").value;
+      var version_code = getid("versionCode").value;
+      var updates_content = getid("updatesContent").value;
+      
+
+      if(version_name.length>0&&version_code.length>0&&updates_content.length>0)
+      {
+        var features = updates_content.split('\n');
+
+        updates_content = "<p>New features:</p>";
+
+        for(i=0; i<features.length; i++)
+          updates_content = updates_content + "<li>" + features[i] + "</li>";
+
+        setTimeout(function() {
+
+          // post data
+          $.post( "../../api/data/web/?type=versioncontrol", { 'code': version_code, 'name': version_name, 'content': updates_content } )
+            .done(function() {
+              $("#resultBoxforversion").html("<div class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a><strong>Saved!</strong>.</div>");
+            })
+            .fail(function(result) {
+              $("#resultBoxforversion").html("<div class=\"alert alert-danger\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a><strong>Error!</strong> A problem has occurred while submitting your data.</div>");
+            });
+
+        }, 0);
+
+        
+        } else {
+          $("#resultBoxforversion").html("<div class=\"alert alert-warning\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a><strong>Warning!</strong> Please check your input.</div>");
+        }
+    }
+
+    $(document).ready(function () {
+      $.get("../../api/data/web/?type=getversion", function(result){
+        var paras = result.split('|', 3);
+        $('#versionCode').val(paras[0]);
+        $('#versionName').val(paras[1]);
+        $('#updatesContent').val(paras[2]);
+      });
+
+      $("#versionPushForm").submit(function() {
+        submitVersionInfo();
+        return false;
+      });
+
+      $("#versionName").on('input', function() {
+        var bla = $('#versionName').val();
+        bla = bla.replace(/[^0-9]/g, '');
+        $('#versionCode').val(bla);
+      });
+
+    });
+    </script>
+  
+    
+  </body>
+</html>
