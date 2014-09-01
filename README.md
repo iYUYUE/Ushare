@@ -50,6 +50,10 @@ Ushare Installation Guide
 
 - - -
 
+### Screenshot
+
+![Alt text](http://doc/Dashboard_screenshot1.png "Dashboard Screenshot 1")
+- - -
 ### * Known Bugs of Ushare
 
 
@@ -58,7 +62,8 @@ This is an System API bug introduced by MIUI JLB24.0 (the official custom OS of 
 
 - - -
 
-### We worked together
+#### _Web Frontend and API Service: Yue Yu_
+#### _Android Client: Yue Yu, Weiping Huang_
+#### _UI Design: Weiping Huang, Yue Yu, Yangzi Zhao, Ruiqiong Tian_
 
-#### _Client and Server Coding: Yue Yu_
-#### _UI Design: Weiping.Huang, Yangzi Zhao, Ruiqiong Tian, Yue Yu_
+### _We worked together!_
