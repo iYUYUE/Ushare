@@ -22,3 +22,36 @@ Why choose us?
 
 3. Convenient Ushare can accommodate some awkward social situation. Some people may be born shy and afraid of being rejected. They can use this app with ease, because the people they found are all willing to share umbrella.
 To sum up, the app we are designing will provide people a chance to help each other. We believe we are capable to make this come true.
+
+- - -
+
+Ushare Installation Guide
+--------------
+
+### Requirement
+ * Android Phone (3.1.2 and above, 1280x720 or higher resolution is recommended)	'''Required'''
+ * Access to ushare.iyuyue.net (with in the XJTLU campus)	 '''Required'''
+ * Android Development Tools (ADT) or Eclipse	'''Optional'''
+
+### Build & Installation
+
+#### For Client:
+
+ * Method 1(Recommended): Download and install the latest version of Ushare from http://ushare.iyuyue.net (in your Phone)
+ 
+ * Method 2: Copy the apk file (code/client/ushare.apk in the package) to your phone and install 
+ 
+ * Method 3: Import the project archive to ADT Eclipse (code/client/ Ushare_*.zip in the package) and build the project to your phone
+
+#### For Server:
+ * The server API has been set up for you at ushare.iyuyue.net
+ * You can access the Dashboard through https://ushare.iyuyue.net/web/dashboard/
+ * Also, phpMyAdmin is available at http://10.7.126.32/phpmyadmin/ (ushare:*******)
+
+- - -
+
+### *Known Bugs of Ushare
+
+
+* [MIUI JLB24.0 or older] The router's BSSID may show up as 00:00:00:00:00:00 after resuming from hibernation.
+This is an System API bug introduced by MIUI JLB24.0 (the official custom OS of Xiaomi Phone) or older version. It has been fixed in the later version.
