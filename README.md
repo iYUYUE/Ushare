@@ -23,6 +23,8 @@ Why choose us?
 3. Convenient Ushare can accommodate some awkward social situation. Some people may be born shy and afraid of being rejected. They can use this app with ease, because the people they found are all willing to share umbrella.
 To sum up, the app we are designing will provide people a chance to help each other. We believe we are capable to make this come true.
 
+** Notice: The Ushare Public Service is only accessible in the XJTLU campus now.
+
 - - -
 
 Ushare Installation Guide
