@@ -52,7 +52,7 @@ Ushare Installation Guide
 
 ### Screenshot
 
-![Alt text](http://doc/Dashboard_screenshot1.png "Dashboard Screenshot 1")
+![Alt text](/doc/Dashboard_screenshot1.png "Dashboard Screenshot 1")
 - - -
 ### * Known Bugs of Ushare
 
