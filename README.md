@@ -53,7 +53,7 @@ Ushare Installation Guide
 ### Screenshot
 
 ![](/doc/screenshots/Dashboard_screenshot_1.png "Dashboard Screenshot 1")
-<center>Dashboard Home Page</center>
+<div style="text-align:center">Dashboard Home Page</div>
 
 ![](/doc/screenshots/Android_screenshot_1.png "Android Screenshot 1")  |  ![](/doc/screenshots/Android_screenshot_7.png "Android Screenshot 7")
 :-------------------------:|:-------------------------:
