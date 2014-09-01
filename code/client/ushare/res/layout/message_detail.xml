@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="#FFFFFF">
+    
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/tab_background"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+        
+        <TextView
+		android:layout_width="wrap_content"
+		android:layout_height="40dp"
+		android:gravity="center_vertical"
+		android:text="Ushare Request"
+		android:textColor="#000000"
+		android:textStyle="bold"
+		android:textSize="20sp" />
+
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+    	android:layout_height="40dp" 
+    	android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text=""
+        android:textSize="20sp" />
+    
+    <TextView
+        android:id="@+id/detail_info"
+        android:layout_width="280dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_qianhui"
+        android:gravity="center"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="None"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/okButton"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/detail_info"
+        android:layout_alignLeft="@+id/detail_info"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="60dp"  
+        android:background="@drawable/selector_ok"
+        android:onClick="onClickOK"
+        android:text="OK" />
+
+    <Button
+        android:id="@+id/rejectButton"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/okButton"
+        android:layout_below="@+id/okButton"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/selector_refuse"
+        android:onClick="onClickRefuse"
+        android:text="@string/refuse" />
+    
+    <TextView
+        android:id="@+id/recieve"
+        android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_marginBottom="2dp"
+	    android:layout_marginRight="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:textColor="#778087"
+        android:text="Received"
+        android:textSize="15sp" />
+
+</RelativeLayout>

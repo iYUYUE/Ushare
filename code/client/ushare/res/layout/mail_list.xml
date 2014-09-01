@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingRight="8dp" >
+    
+   		<ImageView 
+   	    android:id="@+id/read" 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" 
+	    android:layout_margin="10dp"/>
+
+	 <TextView
+	    android:id="@+id/title"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_toRightOf="@id/read"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentTop="true"
+	    android:layout_marginTop="2dp"
+	    android:layout_marginLeft="24dp"
+	    android:textColor="#003366"
+	    android:textStyle="bold"
+	    android:textSize="17sp" />
+
+	<TextView
+	    android:id="@+id/info"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/title"
+	    android:layout_marginTop="8dp"
+	    android:layout_marginBottom="20dp"
+	    android:layout_marginLeft="24dp"
+	    android:ellipsize="end"
+        android:maxLines="2"
+	    android:textColor="#778087"
+	    android:textSize="19sp" />
+
+	<TextView
+	    android:id="@+id/date"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    android:layout_alignParentTop="true"
+	    android:layout_marginTop="2dp"
+	    android:textColor="#778087" />
+	
+	<View
+	    android:id="@+id/gap"
+	    android:layout_width="wrap_content"
+	    android:layout_height="9dip"
+	    android:layout_below="@+id/info"
+	    android:layout_marginLeft="24dp"
+	    android:layout_alignParentBottom="true">
+	    
+	</View>
+		 	
+</RelativeLayout>

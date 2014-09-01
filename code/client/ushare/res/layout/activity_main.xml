@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    xmlns:tools="http://schemas.android.com/tools"  
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent"   
+    android:orientation="vertical" >  
+    
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.0" >
+        <TextView
+              android:id="@+id/topic"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+              </TextView>
+              
+    </FrameLayout>
+        
+        <RadioGroup android:id="@+id/main_radio"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/tab_background"
+        >
+
+            <RadioButton
+                android:id="@+id/radio_b1"
+                android:layout_marginTop="4.0dip"
+                android:layout_marginLeft="2.0dip"
+                android:button="@null"
+                android:focusable="true"
+                android:gravity="center"
+                android:drawableTop="@drawable/home_change"
+                android:textColor="@drawable/text_onchange"
+                android:textSize="14sp"
+                android:text="@string/home" />
+        
+            <RadioButton android:id="@+id/radio_b2"
+            android:layout_marginTop="4.0dip"
+            android:layout_marginLeft="8.0dip"
+            android:drawableTop="@drawable/message_change"
+            android:gravity="center"
+            android:textColor="@drawable/text_onchange"
+            android:textSize="14sp"
+            android:text="@string/message"
+            android:button="@null"
+        />
+        
+        	<RadioButton android:id="@+id/radio_b3"
+            android:layout_marginTop="4.0dip"
+            android:layout_marginLeft="8.0dip"
+            android:drawableTop="@drawable/me_change"
+            android:gravity="center"
+            android:textColor="@drawable/text_onchange"
+            android:textSize="14sp"
+            android:text="@string/me"
+            android:button="@null"
+        />
+        
+        	<RadioButton android:id="@+id/radio_b4"
+            android:layout_marginTop="4.0dip"
+            android:layout_marginLeft="8.0dip"
+            android:drawableTop="@drawable/more_change"
+            android:gravity="center"
+            android:textColor="@drawable/text_onchange"
+            android:textSize="14sp"
+            android:text="@string/more"
+            android:button="@null"
+        />
+        	
+      </RadioGroup>     
+    </LinearLayout> 
+    
+    

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="ContentDescription">
+        <ignore path="res/layout/home.xml" />
+    </issue>
+    <issue id="HardcodedText">
+        <ignore path="res/layout/home.xml" />
+        <ignore path="res/layout/message_detail.xml" />
+    </issue>
+    <issue id="NewApi" severity="ignore" />
+    <issue id="ObsoleteLayoutParam">
+        <ignore path="res/layout/activity_login.xml" />
+    </issue>
+</lint>

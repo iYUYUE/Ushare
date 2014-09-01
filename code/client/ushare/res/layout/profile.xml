@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+     <LinearLayout
+        android:id="@+id/profilelinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/tab_background"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+        
+        <TextView
+		android:layout_width="wrap_content"
+		android:layout_height="40dp"
+		android:gravity="center_vertical"
+		android:text="Ushare Contacts"
+		android:textColor="#000000"
+		android:textStyle="bold"
+		android:textSize="20sp" />
+    </LinearLayout>
+
+     <com.yelp.android.webimageview.WebImageView
+         android:id="@+id/portrait"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/profilelinear"
+         android:adjustViewBounds= "true"
+         android:maxHeight="64dp"
+         android:maxWidth="64dp"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="38dp"/>
+
+     <ListView
+         android:id="@+id/profilelist"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/portrait"
+         android:layout_centerHorizontal="true"
+         android:layout_marginLeft="5dp"
+         android:layout_marginRight="5dp"
+         android:layout_marginTop="57dp"
+         android:background="@drawable/shape_listview" >
+
+     </ListView>
+
+</RelativeLayout>
+

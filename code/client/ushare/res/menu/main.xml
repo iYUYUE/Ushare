@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:id="@layout/home" android:enabled="true" android:visible="true"></group>
+    <group android:id="@layout/activity_main" android:visible="true" android:enabled="true"><item android:id="@id/main_radio"></item>
+        <item android:id="@id/radio_b1"></item>
+        
+        <item android:id="@id/radio_b3"></item>
+        <item android:id="@id/radio_b4"></item>
+        <item android:id="@id/container" android:menuCategory="container"></item>
+    </group>
+    <group android:id="@layout/home"></group>
+    <group android:id="@layout/me"></group>
+    <group android:id="@layout/more"></group>
+
+</menu>
