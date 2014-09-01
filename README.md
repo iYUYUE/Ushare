@@ -29,9 +29,9 @@ Ushare Installation Guide
 --------------
 
 ### Requirement
- * Android Phone (3.1.2 and above, 1280x720 or higher resolution is recommended)	'''Required'''
- * Access to ushare.iyuyue.net (with in the XJTLU campus)	 '''Required'''
- * Android Development Tools (ADT) or Eclipse	'''Optional'''
+ * Android Phone (3.1.2 and above, 1280x720 or higher resolution is recommended)	_**Required**_
+ * Access to ushare.iyuyue.net (with in the XJTLU campus)	 _**Required**_
+ * Android Development Tools (ADT) or Eclipse	_**Optional**_
 
 ### Build & Installation
 
@@ -51,9 +51,11 @@ Ushare Installation Guide
 - - -
 
 ### Screenshot
+|  ![](/doc/screenshots/Dashboard_screenshot_1.png "Dashboard Screenshot 1") |
+|:-:|
+|  Dashboard Home Page |
 
-![](/doc/screenshots/Dashboard_screenshot_1.png "Dashboard Screenshot 1")
-<div style="text-align:center">Dashboard Home Page</div>
+<br  />
 
 ![](/doc/screenshots/Android_screenshot_1.png "Android Screenshot 1")  |  ![](/doc/screenshots/Android_screenshot_7.png "Android Screenshot 7")
 :-------------------------:|:-------------------------:
