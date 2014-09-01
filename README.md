@@ -46,12 +46,19 @@ Ushare Installation Guide
 #### For Server:
  * The server API has been set up for you at ushare.iyuyue.net
  * You can access the Dashboard through https://ushare.iyuyue.net/web/dashboard/
- * Also, phpMyAdmin is available at http://10.7.126.32/phpmyadmin/ (ushare:*******)
+ * Also, phpMyAdmin is available at http://10.7.126.32/phpmyadmin/ (ushare:ushare2014)
 
 - - -
 
-### *Known Bugs of Ushare
+### * Known Bugs of Ushare
 
 
 * [MIUI JLB24.0 or older] The router's BSSID may show up as 00:00:00:00:00:00 after resuming from hibernation.
 This is an System API bug introduced by MIUI JLB24.0 (the official custom OS of Xiaomi Phone) or older version. It has been fixed in the later version.
+
+- - -
+
+### We worked together
+
+#### _Client and Server Coding: Yue Yu_
+#### _UI Design: Weiping.Huang, Yangzi Zhao, Ruiqiong Tian, Yue Yu_
