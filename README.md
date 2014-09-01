@@ -46,13 +46,31 @@ Ushare Installation Guide
 #### For Server:
  * The server API has been set up for you at ushare.iyuyue.net
  * You can access the Dashboard through https://ushare.iyuyue.net/web/dashboard/
- * Also, phpMyAdmin is available at http://10.7.126.32/phpmyadmin/ (ushare:ushare2014)
+ * Also, phpMyAdmin is available at http://10.7.126.32/phpmyadmin/ (ushare:**********)
 
 - - -
 
 ### Screenshot
 
-![Alt text](/doc/Dashboard_screenshot1.png "Dashboard Screenshot 1")
+![Alt text](/doc/Dashboard_screenshot_1.png "Dashboard Screenshot 1")
+<center>Dashboard Home Page</center>
+
+![Alt text](/doc/Android_screenshot_1 "Android Screenshot 1")
+<center>Ushare Home</center>
+![Alt text](/doc/Android_screenshot_7 "Android Screenshot 7")
+<center>Ushare Home (Share Button Pressed)</center>
+![Alt text](/doc/Android_screenshot_2 "Android Screenshot 2")
+<center>Ushare Message</center>
+![Alt text](/doc/Android_screenshot_3 "Android Screenshot 3")
+<center>Ushare Me</center>
+![Alt text](/doc/Android_screenshot_4 "Android Screenshot 4")
+<center>Ushare More Settings</center>
+![Alt text](/doc/Android_screenshot_5 "Android Screenshot 5")
+<center>Find people nearby</center>
+![Alt text](/doc/Android_screenshot_6 "Android Screenshot 6")
+<center>Ask for a share</center>
+![Alt text](/doc/Android_screenshot_8 "Android Screenshot 8")
+<center>Log in & out the app</center>
 - - -
 ### * Known Bugs of Ushare
 
