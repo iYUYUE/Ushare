@@ -51,19 +51,19 @@ Ushare Installation Guide
 - - -
 
 ### Screenshot
-|  ![](/doc/screenshots/Dashboard_screenshot_1.png "Dashboard Screenshot 1") |
+|  ![](/screenshots/Dashboard_screenshot_1.png "Dashboard Screenshot 1") |
 |:-:|
 |  Dashboard Home Page |
 
 <br  />
 
-![](/doc/screenshots/Android_screenshot_1.png "Android Screenshot 1")  |  ![](/doc/screenshots/Android_screenshot_7.png "Android Screenshot 7")
+![](/screenshots/Android_screenshot_1.png "Android Screenshot 1")  |  ![](/screenshots/Android_screenshot_7.png "Android Screenshot 7")
 :-------------------------:|:-------------------------:
 Ushare Home             |  Ushare Home (Share Button Pressed)
 
 <br  />
 
-![](/doc/screenshots/Android_screenshot_2.png "Android Screenshot 2") |  ![](/doc/screenshots/Android_screenshot_3.png "Android Screenshot 3")
+![](/screenshots/Android_screenshot_2.png "Android Screenshot 2") |  ![](/screenshots/Android_screenshot_3.png "Android Screenshot 3")
 :-------------------------:|:-------------------------:
 Instant Message             |  About Me
 
