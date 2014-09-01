@@ -52,25 +52,14 @@ Ushare Installation Guide
 
 ### Screenshot
 
-![Alt text](/doc/Dashboard_screenshot_1.png "Dashboard Screenshot 1")
-<center>Dashboard Home Page</center>
-
-![Alt text](/doc/Android_screenshot_1.png "Android Screenshot 1")
-<center>Ushare Home</center>
-![Alt text](/doc/Android_screenshot_7.png "Android Screenshot 7")
-<center>Ushare Home (Share Button Pressed)</center>
-![Alt text](/doc/Android_screenshot_2.png "Android Screenshot 2")
-<center>Ushare Message</center>
-![Alt text](/doc/Android_screenshot_3.png "Android Screenshot 3")
-<center>Ushare Me</center>
-![Alt text](/doc/Android_screenshot_4.png "Android Screenshot 4")
-<center>Ushare More Settings</center>
-![Alt text](/doc/Android_screenshot_5.png "Android Screenshot 5")
-<center>Find people nearby</center>
-![Alt text](/doc/Android_screenshot_6.png "Android Screenshot 6")
-<center>Ask for a share</center>
-![Alt text](/doc/Android_screenshot_8.png "Android Screenshot 8")
-<center>Log in & out the app</center>
+<center>![github](/doc/screenshots/Dashboard_screenshot_1.png "Dashboard Screenshot 1")
+<center>Dashboard Home Page
+<center>![github](/doc/screenshots/Android_screenshot_1.png "Android Screenshot 1")
+<center>Ushare Home
+<center>![github](/doc/screenshots/Android_screenshot_2.png "Android Screenshot 2")
+<center>Ushare Message
+<center>![github](/doc/screenshots/Android_screenshot_3.png "Android Screenshot 3")
+<center>Ushare Me
 - - -
 ### * Known Bugs of Ushare
 
